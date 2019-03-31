@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="419.0" prefWidth="832.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI.TableViewMovie">
+   <children>
+       <Button layoutX="648.0" layoutY="379.0" mnemonicParsing="false" onAction="#plotGraph" text="Views Graph" />
+       <Button layoutX="532.0" layoutY="379.0" mnemonicParsing="false" onAction="#deleteObject" text="Remove Object" />
+       <TableView fx:id="movieTable" layoutX="9.0" layoutY="50.0" prefHeight="319.0" prefWidth="757.0">
+        <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="44.0" text="Title" />
+            <TableColumn fx:id="descriptionColumn" minWidth="0.0" prefWidth="68.0" text="Description" />
+            <TableColumn fx:id="productionColumn" prefWidth="71.0" text="Date of production" />
+            <TableColumn fx:id="durationColumn" prefWidth="59.0" text="Duration" />
+            <TableColumn fx:id="distributorColumn" prefWidth="64.0" text="Distributor" />
+            <TableColumn fx:id="genreColumn" prefWidth="60.0" text="Genre" />
+            <TableColumn fx:id="countryColumn" prefWidth="78.0" text="Production country" />
+            <TableColumn fx:id="priceColumn" minWidth="8.0" prefWidth="46.0" text="Price" />
+            <TableColumn fx:id="ratingColumn" prefWidth="58.0" text="Rating" />
+            <TableColumn fx:id="viewsColumn" minWidth="0.0" prefWidth="46.0" text="Views" />
+            <TableColumn fx:id="discountColumn" minWidth="0.0" prefWidth="76.0" text="Discount" />
+            <TableColumn fx:id="trailerColumn" minWidth="0.0" prefWidth="128.0" text="Link to trailer" />
+            <TableColumn fx:id="actorListColumn" minWidth="0.0" prefWidth="75.0" text="List of actors" />
+            <TableColumn fx:id="timeLeftColumn" minWidth="0.0" prefWidth="75.0" text="Available for (days)" />
+        </columns>
+      </TableView>
+       <Label layoutX="357.0" layoutY="14.0" prefHeight="25.0" prefWidth="200" text="MOVIE">
+           <font>
+               <Font size="20.0" />
+           </font>
+       </Label>
+   </children>
+</AnchorPane>

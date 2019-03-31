@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<!-- prefHeight="700" prefWidth="772.0"-->
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI.TableViewLiveStream">
+    <children>
+        <Button layoutX="640.0" layoutY="269.0" mnemonicParsing="false" onAction="#plotGraph" text="Views Graph" />
+        <Button layoutX="519.0" layoutY="269.0" mnemonicParsing="false" onAction="#deleteObject" text="Remove Object" />
+        <TableView fx:id="liveStreamTable" layoutX="9.0" layoutY="50.0" prefHeight="202.0" prefWidth="757.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="54.0" text="Name" />
+                <TableColumn fx:id="descriptionColumn" prefWidth="110.0" text="Description" />
+                <TableColumn fx:id="durationColumn" prefWidth="67.0" text="Duration" />
+                <TableColumn fx:id="distributorColumn" prefWidth="71.0" text="Distributor" />
+                <TableColumn fx:id="countryColumn" prefWidth="132.0" text="Production country" />
+                <TableColumn fx:id="priceColumn" minWidth="8.0" prefWidth="76.0" text="Price" />
+                <TableColumn fx:id="ratingColumn" prefWidth="55.0" text="Rating" />
+                <TableColumn fx:id="viewsColumn" minWidth="0.0" prefWidth="54.0" text="Views" />
+                <TableColumn fx:id="discountColumn" minWidth="0.0" prefWidth="70.0" text="Discount" />
+                <TableColumn fx:id="airDateColumn" minWidth="0.0" prefWidth="67.0" text="Air date" />
+            </columns>
+        </TableView>
+        <Label layoutX="357.0" layoutY="14.0" prefHeight="25.0" prefWidth="200" text="LIVE STREAM">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

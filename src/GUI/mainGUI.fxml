@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="center" prefHeight="516.0" prefWidth="578.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI.Controller">
+
+
+    <TextField id="tittel" fx:id="searchText" layoutX="369.0" layoutY="426.0" onAction="#search" promptText="WYSZKUKAJ PO NAZWIE LUB AKTORZE" />
+    <Button layoutX="318.0" layoutY="366.0" onAction="#search" mnemonicParsing="false" text="WYSZKUKAJ" />
+
+    <!--object tables-->
+    <HBox layoutY="25.0" prefHeight="226.0" prefWidth="567.0">
+        <TableView fx:id="seriesTable" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="seriesColumn" onEditStart="#inspectSeries" prefWidth="119.0" text="Series" />
+            </columns>
+        </TableView>
+        <TableView fx:id="liveStreamTable" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="streamsColumn" onEditStart="#inspectLiveStream" prefWidth="143.0" text="Live Streams" />
+            </columns>
+        </TableView>
+        <TableView fx:id="movieTable" prefHeight="221.0" prefWidth="210.0">
+            <columns>
+                <TableColumn fx:id="movieColumn" onEditStart="#inspectMovie" prefWidth="111.0" text="Movies" />
+            </columns>
+        </TableView>
+        <TableView fx:id="distributorTable" prefHeight="221.0" prefWidth="222.0">
+            <columns>
+                <TableColumn fx:id="distributorColumn" onEditStart="#inspectDistributor" prefWidth="142.0" text="Distributors" />
+            </columns>
+        </TableView>
+        <TableView fx:id="userTable" prefHeight="221.0" prefWidth="219.0">
+            <columns>
+                <TableColumn fx:id="userColumn" onEditStart="#inspectUser" prefWidth="137.0" text="Users" />
+            </columns>
+        </TableView>
+    </HBox>
+
+    <!--bottom view-->
+    <HBox layoutX="15.0" layoutY="264.0" prefHeight="210.0" prefWidth="541.0">
+        <!--user interaction field-->
+        <VBox prefHeight="157.0" prefWidth="223.0" spacing="10.0">
+            <Label fx:id="labelTypeOfObjectCreated" prefHeight="17.0" prefWidth="119.0" text="Label" />
+            <ChoiceBox fx:id="newObjectChoiceBox" prefWidth="150.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Movie" />
+                        <String fx:value="Series" />
+                        <String fx:value="LiveStream" />
+                        <String fx:value="User" />
+                        <String fx:value="Distributor" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <Button mnemonicParsing="false" onAction="#buttonCreateObject" text="Add Object" />
+            <Button mnemonicParsing="false" onAction="#buttonSerializeSimulation" text="Serialize Simulation" />
+            <Button mnemonicParsing="false" onAction="#buttonDeserializeSimulation" text="Deserialize Simulation" />
+        </VBox>
+        <!--status field-->
+        <VBox>
+            <Label> Statystyki </Label>
+            <Label fx:id="currentIncomeLabel" />
+            <Label fx:id="currentMonthLabel" />
+            <Label fx:id="currentDayLabel" />
+            <Label fx:id="totalProductsLabel" />
+        </VBox>
+    </HBox>
+</VBox>

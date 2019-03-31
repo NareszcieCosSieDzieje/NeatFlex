@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox alignment="center"
+      prefHeight="516.0" prefWidth="578.0"
+      xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="GUI.Controller">
+
+    <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="468.0">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="Close"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <MenuItem mnemonicParsing="false" text="Delete"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" text="About"/>
+        </Menu>
+    </MenuBar>
+
+    <TextField layoutX="369.0" layoutY="426.0" promptText="WYSZKUKAJ "/>
+    <Button layoutX="345.0" layoutY="301.0" mnemonicParsing="false" text="wyszukaj opcja "/>
+    <Button layoutX="318.0" layoutY="366.0" mnemonicParsing="false" text="wykres ogladalnosci w czasie"/>
+
+    <!--object tables-->
+    <HBox layoutY="25.0" prefHeight="226.0" prefWidth="567.0">
+        <TableView fx:id="seriesTable" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="seriesColumn" prefWidth="119.0" text="Seriale"/>
+            </columns>
+        </TableView>
+        <TableView fx:id="liveStreamTable" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="streamsColumn" prefWidth="143.0" text="Wydarzenia na żywo"/>
+            </columns>
+        </TableView>
+        <TableView fx:id="movieTable" prefHeight="221.0" prefWidth="210.0">
+            <columns>
+                <TableColumn fx:id="movieColumn" prefWidth="111.0" text="Filmy"/>
+            </columns>
+        </TableView>
+        <TableView fx:id="distributorTable" prefHeight="221.0" prefWidth="222.0">
+            <columns>
+                <TableColumn fx:id="distributorColumn" prefWidth="142.0" text="Dystrybutorzy"/>
+            </columns>
+        </TableView>
+        <TableView fx:id="userTable" prefHeight="221.0" prefWidth="219.0">
+            <columns>
+                <TableColumn fx:id="userColumn" prefWidth="137.0" text="Użytkownicy"/>
+            </columns>
+        </TableView>
+    </HBox>
+
+    <!--bottom view-->
+    <HBox layoutX="15.0" layoutY="264.0" prefHeight="210.0" prefWidth="541.0">
+        <!--user interaction field-->
+        <VBox prefHeight="157.0" prefWidth="223.0" spacing="10.0">
+            <Label fx:id="labelTypeOfObjectCreated" prefHeight="17.0" prefWidth="119.0" text="Label"/>
+            <ChoiceBox  fx:id="newObjectChoiceBox" prefWidth="150.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Movie" />
+                        <String fx:value="Series" />
+                        <String fx:value="LiveStream" />
+                        <String fx:value="User" />
+                        <String fx:value="Distributor" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <Button mnemonicParsing="false" onAction="#buttonCreateObject" text="Dodaj Obiekt"/>
+        </VBox>
+        <!--status field-->
+        <VBox>
+            <Label> Statystyki </Label>
+            <Label fx:id="currentIncomeLabel"/>
+            <Label fx:id="totalProductsLabel"/>
+        </VBox>
+    </HBox>
+</VBox>

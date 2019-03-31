@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI.SearchViewController">
+    <children>
+        <TableView fx:id="searchTable" layoutX="9.0" layoutY="50.0" prefHeight="250.0" prefWidth="757.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="64.0" text="Title" />
+                <TableColumn fx:id="descriptionColumn" prefWidth="73.0" text="Description" />
+                <TableColumn fx:id="productionColumn" prefWidth="118.0" text="Date of production" />
+                <TableColumn fx:id="durationColumn" prefWidth="62.0" text="Duration" />
+                <TableColumn fx:id="distributorColumn" prefWidth="110.0" text="Distributor" />
+                <TableColumn fx:id="genreColumn" prefWidth="56.0" text="Genre" />
+                <TableColumn fx:id="countryColumn" prefWidth="126.0" text="Production country" />
+                <TableColumn fx:id="priceColumn" minWidth="8.0" prefWidth="43.0" text="Price" />
+                <TableColumn fx:id="ratingColumn" prefWidth="50.0" text="Rating" />
+                <TableColumn fx:id="viewsColumn" minWidth="0.0" prefWidth="54.0" text="Views" />
+            </columns>
+        </TableView>
+        <Label layoutX="357.0" layoutY="14.0" prefHeight="30.0" prefWidth="200.0" text="PRODUCT">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
